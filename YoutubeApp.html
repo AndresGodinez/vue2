@@ -21,8 +21,10 @@
            v-show = "showItemInput"
            @keyup.enter="addVideoList"  >
     <ul>
-        <li v-for="item in list"
-            @click="playVideo(item)">
+        <li v-for="item in listVideos"
+            @click="playVideo(item)"
+            :class="{active:item.active}"
+        >
             {{item.title}}
         </li>
     </ul>
