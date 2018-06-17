@@ -7,8 +7,12 @@
 </head>
 <body>
 	<div id="app">
-		{{ object.padres }}
-		{{ object.brazos }}
+		<input type="text" v-model="toDo" @keyup.enter="addWorkToDo" >
+		<ul>
+			<li v-for="item in list" @click="completeTask(item)" >
+				{{item.text}}
+			</li>
+		</ul>
 		<pre>
 			{{ $data }}
 		</pre>
