@@ -29,7 +29,7 @@ let v = new Vue({
     },
     deleteVideoList: function (video) {
       console.log(video);
-      console.log("delete video");
+
     },
     playVideo: function (video) {
       console.log(video);

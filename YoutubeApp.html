@@ -24,6 +24,7 @@
         <li v-for="item in listVideos"
             @click="playVideo(item)"
             :class="{active:item.active}"
+            @contexmenu.prevent="deleteVideoList(item)"
         >
             {{item.title}}
         </li>
