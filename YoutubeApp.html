@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Curso Vue</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+</head>
+<body>
+<div id="app">
+    <input type="text"
+           placeholder="url video"
+           v-model="urlVideo"
+           v-show="!showItemInput"
+           @keyup.enter="showTitleInput"
+    >
+    <input type="text"
+           placeholder="Title"
+           id="title"
+           v-model="title"
+           v-show = "showItemInput"
+           @keyup.enter="addVideoList"  >
+    <ul>
+        <li v-for="item in list"
+            @click="playVideo(item)">
+            {{item.title}}
+        </li>
+    </ul>
+    <pre>
+		{{ $data }}
+    </pre>
+    <!--<iframe src="" frameborder="0" id="rpd" allow="autoplay" :src="activeVideo"></iframe>-->
+    <iframe width="560" height="315" :src="activeVideo" frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+    </iframe>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/youtubeApp.js"></script>
+</body>
+</html>
