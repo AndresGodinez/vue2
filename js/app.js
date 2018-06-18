@@ -6,7 +6,19 @@ let x = new Vue({
       {text: 'create new task', complete: false, priority: true},
       {text: 'show videos', complete: false, priority: true},
       {text: 'show api', complete: false, priority: false},
-    ]
+    ],
+    users : [
+      {
+        name: 'Andres',
+        role: 'admin',
+        priority: 1
+      },
+      {
+        name: 'Pablo',
+        role: 'user',
+        priority: 2
+      }
+    ],
   },
   methods: {
     addTaskToDo: function () {
@@ -30,6 +42,10 @@ let x = new Vue({
   computed:{
     priorityTasks(){
       return this.listTasksToDo.filter((task) => task.priority )
+    },
+    taskForUser(){
+      user.name = 'Andres';
+      return this.listTasksToDo.filter((user) => user.name);
     }
   }
 });

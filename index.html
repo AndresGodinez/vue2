@@ -9,7 +9,7 @@
 	<div id="app">
 		<input type="text" v-model="taskToDo" @keyup.enter="addTaskToDo" >
 		<ul>
-			<li v-for="task in priorityTasks"
+			<li v-for="task in taskForUser"
 					@click="completeTask(task)"
 					@contextmenu = "changePriority(task)"
 			>
