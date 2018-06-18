@@ -4,3 +4,7 @@
 .active{
     background-color: blue;
 }
+.imageRender{
+    height: 100px;
+    width: 100px;
+}
