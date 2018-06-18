@@ -1,21 +1,35 @@
 let x = new Vue({
-	el: '#app',
-	data:{
-		toDo:'prueba',
-		list:[]
-	},
-	methods:{
-		addWorkToDo : function (){
-			if (this.toDo && this.toDo != '')
-			this.list.push({
-				text: this.toDo,
-				complete: false
-			});
-			this.toDo = '';
-		},
-		completeTask : function (item){
-			console.log(item);
-			item.complete= !item.complete;
-		}
-	}
+  el: '#app',
+  data: {
+    taskToDo: 'testing',
+    listTasksToDo: [
+      {text: 'create new task', complete: false, priority: true},
+      {text: 'show videos', complete: false, priority: true},
+      {text: 'show api', complete: false, priority: false},
+    ]
+  },
+  methods: {
+    addTaskToDo: function () {
+      if (this.taskToDo && this.taskToDo != '')
+        this.listTasksToDo.push({
+          text: this.taskToDo,
+          complete: false,
+          priority : true
+        });
+      this.taskToDo = '';
+    },
+    completeTask: function (task) {
+      console.log(task);
+      task.complete = !task.complete;
+    },
+    changePriority(task){
+      console.log(task);
+      task.priority = !task.priority;
+    }
+  },
+  computed:{
+    priorityTasks(){
+      return this.listTasksToDo.filter((task) => task.priority )
+    }
+  }
 });

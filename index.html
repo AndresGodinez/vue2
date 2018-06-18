@@ -7,10 +7,13 @@
 </head>
 <body>
 	<div id="app">
-		<input type="text" v-model="toDo" @keyup.enter="addWorkToDo" >
+		<input type="text" v-model="taskToDo" @keyup.enter="addTaskToDo" >
 		<ul>
-			<li v-for="item in list" @click="completeTask(item)" >
-				{{item.text}}
+			<li v-for="task in priorityTasks"
+					@click="completeTask(task)"
+					@contextmenu = "changePriority(task)"
+			>
+				{{task.text}}
 			</li>
 		</ul>
 		<pre>
