@@ -43,7 +43,7 @@ new Vue({
   methods: {},
   computed: {
     findByTitle() {
-      return this.listMovies.filter((movieTitle) => movieTitle.name.includes(this.movieTitle))
+      return this.listMovies.filter((inputMovieTitle) => inputMovieTitle.name.includes(this.movieTitle))
     }
   }
 });
